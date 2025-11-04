@@ -1,0 +1,177 @@
+/* Import skeleton styles */
+@import './skeleton.css';
+
+.moments-section {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  padding: 0 60px;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.moments-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.moments-title {
+  color: #FFD700;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+.moments-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+/* Pinterest-style Masonry Grid */
+.moments-grid {
+  column-count: 2;
+  column-gap: 30px;
+}
+
+.moment-card {
+  break-inside: avoid;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #000;
+  cursor: pointer;
+}
+
+.moment-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.moment-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(218, 41, 28, 0.6), 
+              0 0 40px rgba(255, 215, 0, 0.3);
+}
+
+.moment-card:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.moment-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(218, 41, 28, 0.9) 100%
+  );
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.moment-card:hover .moment-caption {
+  transform: translateY(0);
+}
+
+.moment-caption p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive - 2 columns on tablet */
+@media (max-width: 1200px) {
+  .moments-section {
+    padding: 0 40px;
+    max-width: 1400px;
+  }
+
+  .moments-grid {
+    column-count: 2;
+    column-gap: 24px;
+  }
+
+  .moments-title {
+    font-size: 2rem;
+  }
+}
+
+/* Responsive - 1 column on mobile */
+@media (max-width: 600px) {
+  .moments-section {
+    padding: 0 20px;
+  }
+
+  .moments-grid {
+    column-count: 1;
+  }
+
+  .moments-title {
+    font-size: 1.8rem;
+  }
+
+  .moment-card {
+    margin-bottom: 20px;
+  }
+
+  .moment-caption {
+    transform: translateY(0);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.7) 40%,
+      rgba(218, 41, 28, 0.85) 100%
+    );
+  }
+}
+
+/* Animation for cards appearing */
+.reveal-hidden .moment-card {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+}
+
+.reveal-visible .moment-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: revealMoment 0.6s ease-out forwards;
+}
+
+@keyframes revealMoment {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Stagger animation for cards */
+.reveal-visible .moment-card:nth-child(1) { animation-delay: 0s; }
+.reveal-visible .moment-card:nth-child(2) { animation-delay: 0.1s; }
+.reveal-visible .moment-card:nth-child(3) { animation-delay: 0.2s; }
+.reveal-visible .moment-card:nth-child(4) { animation-delay: 0.3s; }
+.reveal-visible .moment-card:nth-child(5) { animation-delay: 0.4s; }
+.reveal-visible .moment-card:nth-child(6) { animation-delay: 0.5s; }
+.reveal-visible .moment-card:nth-child(7) { animation-delay: 0.6s; }
+.reveal-visible .moment-card:nth-child(8) { animation-delay: 0.7s; }
+.reveal-visible .moment-card:nth-child(9) { animation-delay: 0.8s; }
+.reveal-visible .moment-card:nth-child(10) { animation-delay: 0.9s; }
+

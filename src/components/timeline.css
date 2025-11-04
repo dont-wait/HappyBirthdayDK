@@ -1,0 +1,154 @@
+/* Import skeleton styles */
+@import './skeleton.css';
+
+/* Barça themed horizontal timeline */
+.timeline-section {
+  margin-bottom: 50px;
+  padding: 30px 16px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,19,42,0.25) 100%);
+  border-radius: 18px;
+  border: 2px solid rgba(165,0,68,0.18);
+}
+
+.timeline-title {
+  color: #FFD700;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 6px;
+  text-shadow: 0 0 18px rgba(255,215,0,0.7);
+  font-weight: 900;
+}
+
+.timeline-subtitle {
+  color: #e6f2ff;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+.timeline {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px 6px;
+}
+
+/* A subtle center guide line for the horizontal scroll */
+.timeline-scroll {
+  display: flex;
+  gap: 18px;
+  padding: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.timeline-card {
+  min-width: 260px;
+  max-width: 320px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.5));
+  border: 2px solid rgba(165,0,68,0.6);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6), 0 0 20px rgba(165,0,68,0.08) inset;
+  color: #fff;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+  scroll-snap-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.timeline-card::before {
+  content: '✨';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-card:hover::before {
+  opacity: 1;
+  transform: rotate(360deg);
+}
+
+.timeline-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 40px rgba(165,0,68,0.18);
+  border-color: #FFD700;
+  animation: cardGlow 1.5s infinite;
+}
+
+@keyframes cardGlow {
+  0%, 100% {
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 40px rgba(165,0,68,0.18);
+  }
+  50% {
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 60px rgba(255,215,0,0.3);
+  }
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.card-icon {
+  font-size: 2.2rem;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(165,0,68,0.9), rgba(0,77,152,0.9));
+  box-shadow: 0 6px 18px rgba(165,0,68,0.25);
+}
+
+.card-year {
+  color: #FFD700;
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin: 6px 0;
+  color: #fff;
+  font-weight: 800;
+}
+
+.card-desc {
+  color: rgba(230,242,255,0.92);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.barca-moment {
+  margin-top: 28px;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(165,0,68,0.9), rgba(0,77,152,0.9));
+  border: 2px solid #FFD700;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 30px rgba(255,215,0,0.12) inset;
+}
+
+.barca-icon { font-size: 2rem; color: #FFD700; margin-bottom: 6px }
+.barca-quote { color: #fff; font-size: 1.4rem; font-weight:700 }
+.barca-author { color: #FFD700; margin-top: 6px }
+
+/* simple scrollbar style */
+.timeline-scroll::-webkit-scrollbar { height: 10px }
+.timeline-scroll::-webkit-scrollbar-thumb { background: rgba(165,0,68,0.6); border-radius: 10px }
+
+@media (max-width: 768px) {
+  .timeline-scroll { gap: 12px; padding: 12px }
+  .timeline-card { min-width: 220px }
+  .card-year { font-size: 1.1rem }
+  .card-title { font-size: 1rem }
+}

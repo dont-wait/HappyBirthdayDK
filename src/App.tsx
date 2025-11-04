@@ -7,6 +7,7 @@ import Timeline from './components/Timeline'
 import TrophyCabinet from './components/TrophyCabinet'
 import Confetti from './components/Confetti'
 import TrophyRain from './components/TrophyRain'
+import GiftBox from './components/GiftBox'
 
 function App() {
   const [showContent, setShowContent] = useState(false)
@@ -262,6 +263,8 @@ function App() {
             </p>
           </div>
 
+          <GiftBox />
+
           <div className="footer">
             <p className="footer-motto">💙❤️ Més que un club 💙❤️</p>
             <p className="footer-year">Est. 1899 | Blaugrana Forever | Messi Era</p>
@@ -280,7 +283,7 @@ function App() {
             </p>
             <p style={{fontSize: '1rem', marginBottom: '20px'}}>
               Bạn đã khám phá được bí mật ẩn giấu! 🎉<br/>
-              Ai cũng chỉ là Phó GOAT thôi, vì GOAT thật sự là... TK! 😄👑
+              Ai cũng chỉ là Phó GOAT thôi, vì GOAT thật sự là... Siuuuuuuuuuuuu! 😄👑
             </p>
             <div style={{fontSize: '3rem', margin: '20px 0'}}>
               ⚽💙❤️🏆✨
